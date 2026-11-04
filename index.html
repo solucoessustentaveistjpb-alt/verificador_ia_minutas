@@ -296,12 +296,18 @@ button.trecho{font-style:italic}
 @media (prefers-reduced-motion: reduce){ *{scroll-behavior:auto!important; transition:none!important} }
 
 .diag{margin-top:14px;display:grid;gap:8px;min-width:0}.diag h2{font-size:1.15rem;margin:8px 0 0}.diag h3{font-size:1.02rem;margin:14px 0 0;padding-top:8px;border-top:1px solid var(--bd,#ccc)}.diag h4{font-size:.95rem;margin:8px 0 0}.diag p{margin:0}.diag ul{margin:0;padding-left:1.2em}.diag .tw{overflow-x:auto;max-width:100%}.diag table{border-collapse:collapse;width:100%;font-size:.84rem}.diag th,.diag td{border:1px solid var(--bd,#ccc);padding:5px 8px;text-align:left;vertical-align:top;overflow-wrap:anywhere}.diag th{background:var(--hl,#eef);font-weight:600}
+
+.gov-ctl{display:grid;gap:10px}.gov-g{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:flex-end}.gov-g label{display:grid;gap:4px;font-size:12.5px;color:var(--muted);min-width:0}.gov-g select,.lab-in input{font:inherit;font-size:14px;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 9px;min-width:0;max-width:100%}.gov-g label.chk{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--fg)}
+.gov-box{border:1px solid var(--line);border-left-width:5px;border-radius:8px;padding:10px 14px;margin:8px 0 12px;background:var(--surface)}.gov-box.conferir{border-left-color:var(--bad)}.gov-box.incon,.gov-box.declarado,.gov-box.edicao{border-left-color:var(--warn)}.gov-box.sem{border-left-color:var(--ok)}.gov-box.insuf{border-left-color:var(--muted)}.gov-box b{display:block;margin-bottom:2px}.gov-box ul{margin:6px 0 0;padding-left:1.2em;font-size:13px;color:var(--muted)}
+.heat{display:flex;flex-wrap:wrap;gap:3px;margin:8px 0 6px}.heat button{width:26px;height:26px;border:1px solid rgba(0,0,0,.25);border-radius:5px;font:inherit;font-size:10.5px;font-weight:600;color:#10202a;cursor:pointer;padding:0}.heat button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.heat-leg{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--muted);align-items:center}.heat-leg i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle;margin-right:4px}
+.contrib{display:grid;gap:4px;margin:6px 0 12px}.contrib .cr{display:grid;grid-template-columns:minmax(120px,34%) 1fr 56px;gap:8px;align-items:center;font-size:12.5px}.contrib .cr>span{min-width:0;overflow-wrap:anywhere}.contrib .cb{position:relative;height:12px;background:var(--mk-pend);border-radius:6px}.contrib .cb i{position:absolute;top:0;bottom:0;border-radius:6px}.contrib .cb i.p{left:50%;background:var(--bad)}.contrib .cb i.n{right:50%;background:var(--ok)}.contrib .cb:after{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:var(--muted)}.contrib .cv{font-family:var(--f-mono);font-size:12px;text-align:right}
+.lab-b{display:grid;gap:10px;min-width:0}.lab-in{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:flex-end}.lab-in label{display:grid;gap:4px;font-size:12.5px;color:var(--muted)}.lab-in input[type=number]{width:110px}.lab-b textarea{min-height:110px;font-family:var(--f-mono);font-size:12.5px}.cal-fig{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}.cal-fig svg{max-width:100%;height:auto;flex:none}.cal-fig svg text{fill:var(--muted);font-size:10px}
 </style>
 
 <div class="app">
   <aside class="side" aria-label="Navegação">
     <div class="brand"><div class="brand-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><div><b>Verificador IA em Textos Jurídicos e Acadêmicos</b></div></div>
-    <nav class="nav" aria-label="Abas"><div class="nav-t">Entrada</div><button type="button" data-tab="minuta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg><span>Minuta e fontes</span><span class="bd" id="bd-minuta" hidden></span></button><div class="nav-t">Resultado</div><button type="button" data-tab="resumo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Resumo</span><span class="bd" id="bd-resumo" hidden></span></button><button type="button" data-tab="itens"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Itens e texto</span><span class="bd" id="bd-itens" hidden></span></button><button type="button" data-tab="autoria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg><span>Autoria por IA</span><span class="bd" id="bd-autoria" hidden></span></button><button type="button" data-tab="gram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>Gramática</span><span class="bd" id="bd-gram" hidden></span></button><button type="button" data-tab="seg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Segurança e cobertura</span><span class="bd" id="bd-seg" hidden></span></button><button type="button" data-tab="saidas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg><span>Saídas e relatórios</span><span class="bd" id="bd-saidas" hidden></span></button><div class="nav-t">Sobre</div><button type="button" data-tab="ajuda"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 .5c0 1.7-2.5 2-2.5 3.5M12 17h.01"/></svg><span>Ajuda e limites</span><span class="bd" id="bd-ajuda" hidden></span></button></nav>
+    <nav class="nav" aria-label="Abas"><div class="nav-t">Entrada</div><button type="button" data-tab="minuta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg><span>Minuta e fontes</span><span class="bd" id="bd-minuta" hidden></span></button><div class="nav-t">Resultado</div><button type="button" data-tab="resumo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Resumo</span><span class="bd" id="bd-resumo" hidden></span></button><button type="button" data-tab="itens"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Itens e texto</span><span class="bd" id="bd-itens" hidden></span></button><button type="button" data-tab="autoria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg><span>Autoria por IA</span><span class="bd" id="bd-autoria" hidden></span></button><button type="button" data-tab="gram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>Gramática</span><span class="bd" id="bd-gram" hidden></span></button><button type="button" data-tab="seg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Segurança e cobertura</span><span class="bd" id="bd-seg" hidden></span></button><button type="button" data-tab="lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 15h8"/></svg><span>Laboratório</span><span class="bd" id="bd-lab" hidden></span></button><button type="button" data-tab="saidas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg><span>Saídas e relatórios</span><span class="bd" id="bd-saidas" hidden></span></button><div class="nav-t">Sobre</div><button type="button" data-tab="ajuda"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 .5c0 1.7-2.5 2-2.5 3.5M12 17h.01"/></svg><span>Ajuda e limites</span><span class="bd" id="bd-ajuda" hidden></span></button></nav>
     <div class="side-foot">Tudo é processado neste navegador. Nada é enviado nem guardado.</div>
   </aside>
 
@@ -401,6 +407,8 @@ button.trecho{font-style:italic}
 
         <section class="tab" id="tab-autoria" hidden aria-label="Autoria por IA">
           <div class="tab-h"><h2>Autoria por IA</h2><p>Estimativa por indícios de que o texto foi redigido por ferramenta de IA.</p></div>
+          <div class="panel gov-ctl"><div class="gov-g"><label>Contexto de uso de IA<select id="s-uso"><option value="desconhecido">Desconhecido</option><option value="proprio">Texto próprio, sem IA admitida</option><option value="edicao">Edição ou revisão por IA admitida</option><option value="geracao">Geração por IA admitida (rascunho)</option></select></label><label>Política de limiar<select id="s-pol"><option value="padrao">Padrão (alvo de falsos positivos ≈ 5%)</option><option value="conservador" selected>Conservador (≈ 1%)</option><option value="ultra">Ultraconservador (≈ 0,05%)</option></select></label><label class="chk"><input type="checkbox" id="c-l2"> Autor escreve em segunda língua</label></div><p class="dica">O percentual não é prova. O contexto e a política mudam a leitura do resultado, não o cálculo do escore.</p></div>
+          <div id="c-gov"></div>
           <details class="panel det" id="p-aut" open><summary>Parecer <span class="cnt" id="n-aut"></span></summary><div id="c-aut"></div></details>
         </section>
 
@@ -415,6 +423,23 @@ button.trecho{font-style:italic}
           <details class="panel det" id="p-cob" open><summary>Cobertura da leitura <span class="cnt" id="n-cob"></span></summary><div id="c-cob"></div></details>
           <details class="panel det" id="p-cmd"><summary>Comandos da minuta <span class="cnt" id="n-cmd"></span></summary><div id="c-cmd"></div></details>
           <details class="panel det" id="p-lac"><summary>Lacunas, omissões e divergências <span class="cnt" id="n-lac"></span></summary><div id="c-lac"></div></details>
+        </section>
+
+        <section class="tab" id="tab-lab" hidden aria-label="Laboratório de detecção">
+          <div class="tab-h"><h2>Laboratório de detecção</h2><p>Teste a robustez do escore contra ataques simulados, calibre os limiares com um corpus próprio e calcule o valor preditivo.</p></div>
+          <details class="panel det" id="p-rob" open><summary>1. Teste de robustez contra ataques simulados <span class="cnt" id="n-rob"></span></summary><div class="lab-b">
+            <p class="dica">Aplica à minuta atual sete ataques automáticos (caracteres invisíveis, homóglifos, remoção e troca de conectivos, fragmentação de frases, supressão de vírgulas e uma combinação) e mede a variação do escore bruto. Paráfrase feita por outro modelo de IA não é simulada.</p>
+            <div><button type="button" class="btn primary" id="b-rob">Executar teste com a minuta atual</button></div><div id="c-rob"></div></div></details>
+          <details class="panel det" id="p-cal" open><summary>2. Calibração com corpus próprio <span class="cnt" id="n-cal"></span></summary><div class="lab-b">
+            <p class="dica">Sem calibração, o percentual é um índice, não uma probabilidade. Forneça textos de autoria conhecida: humanos e de IA. O programa calcula o erro de calibração esperado (ECE, sigla do inglês <i>expected calibration error</i>), ajusta a escala de Platt e indica o limiar de escore para cada taxa de falsos positivos. Use o tipo de texto que você audita (por exemplo, minutas de gabinete). Nada sai deste navegador.</p>
+            <div class="lab-in"><button type="button" class="btn" id="b-cal-h">Carregar textos humanos (.txt)</button><button type="button" class="btn" id="b-cal-i">Carregar textos de IA (.txt)</button><button type="button" class="btn" id="b-cal-l">Limpar corpus</button><span class="dica" id="n-corpus">Nenhum texto carregado.</span></div>
+            <input type="file" id="f-cal-h" accept=".txt,.md,text/plain" multiple hidden><input type="file" id="f-cal-i" accept=".txt,.md,text/plain" multiple hidden>
+            <label class="sr" for="t-cal">Corpus colado</label><textarea id="t-cal" placeholder="Ou cole aqui vários textos, separados por linhas de marcação:&#10;### HUMANO&#10;texto humano 1...&#10;### IA&#10;texto de IA 1...&#10;### HUMANO&#10;texto humano 2..."></textarea>
+            <div><button type="button" class="btn primary" id="b-cal">Calibrar</button></div><div id="c-cal"></div></div></details>
+          <details class="panel det" id="p-vpp" open><summary>3. Valor preditivo: quantos acusados são inocentes?</summary><div class="lab-b">
+            <p class="dica">Mostra o efeito da taxa de falsos positivos quando poucos autores cometem a infração. Preencha os três campos.</p>
+            <div class="lab-in"><label>Prevalência (% de textos com IA indevida)<input type="number" id="v-prev" value="1" min="0.01" max="100" step="any"></label><label>Falsos positivos (% de textos humanos sinalizados)<input type="number" id="v-fpr" value="5" min="0" max="100" step="any"></label><label>Acerto (% de textos de IA sinalizados)<input type="number" id="v-tpr" value="90" min="0" max="100" step="any"></label></div>
+            <div id="c-vpp"></div></div></details>
         </section>
 
         <section class="tab" id="tab-saidas" hidden aria-label="Saídas e relatórios">
@@ -469,6 +494,10 @@ button.trecho{font-style:italic}
         <li>Revisão gramatical do português culto do Brasil: grafia, acentuação, crase, concordância, regência, morfologia verbal, colocação pronominal, pontuação, convenções jurídicas (ordinais, parágrafos, valores), coesão, períodos longos e estilo, com texto corrigido (correções seguras).</li>
         <li>Parecer sobre possível autoria por IA: percentual estimado com faixa, confiança e cenário (redação integral, edição assistida, indefinido, humana); indícios a favor e contra com peso (resíduos de chat, formatação de chatbot, metadados, burstiness em janelas, riqueza lexical, conectivos, pontuação, geometria de parágrafos, previsibilidade interna, ofuscação, referências concretas, alucinações); ajuste para linguagem jurídica formular; limite conservador por convergência de famílias; mapa de parágrafos que explica onde está o sinal.</li>
         <li>Botão «Ver no texto»: nas abas Autoria por IA, Gramática e Segurança, cada indício, categoria ou achado traz o botão. Ele abre a minuta com o trecho destacado, com setas para navegar entre as ocorrências e o botão «Voltar ao módulo».</li>
+        <li>Governança dos falsos positivos (aba Autoria por IA): o contexto de uso, a política de limiar (padrão, conservadora ou ultraconservadora) e o aviso de autor em segunda língua mudam a leitura do resultado. A política conservadora exige escore de 70% e três famílias de indícios; a ultraconservadora, 85% e quatro. Marca direta de ferramenta de IA sempre atinge o limiar. O percentual nunca é prova.</li>
+        <li>Mapa de calor, contribuição dos indícios e deriva estilística (aba Autoria por IA): mostram onde e por que o escore sobe e se há mudança brusca de estilo entre blocos de parágrafos, o que pode indicar trecho colado.</li>
+        <li>Laboratório de detecção: teste de robustez (sete ataques simulados: invisíveis, homóglifos, conectivos, fragmentação, vírgulas e combinação), calibração com corpus próprio (erro de calibração esperado, escala de Platt, diagrama de confiabilidade e limiar por taxa de falsos positivos) e calculadora de valor preditivo.</li>
+        <li>Não roda neste navegador: modelos de linguagem (Binoculars, Fast-DetectGPT), classificadores neurais (DeBERTa, Longformer), modelos treinados em corpus jurídico (LeNER-Br) e detecção de marca d'água (KGW, SynthID). Exigem pesos de modelos e processamento que um arquivo único e local não comporta. O escore deste programa é estilométrico e deve ser calibrado antes de qualquer uso sério.</li>
         <li>Relatório diagnóstico (aba Saídas): leitura fácil, com tabelas de conclusão, números, segurança, cobertura, citações, achados, comandos, lacunas, autoria, gramática e providências por prioridade. Salva em .docx (com tabelas), .txt e .md.</li>
         <li>Suspeitas de alucinação: datas inexistentes, DJe anterior ao julgamento, artigo acima do último do código, súmula do STF acima da 736, número de lei incompatível com o ano, classe de um tribunal atribuída a outro, numeração em sequência, jurisprudência "pacífica" sem precedente, afirmação sobre os autos sem ID ou folha.</li>
       </ul>
@@ -491,7 +520,7 @@ button.trecho{font-style:italic}
       </section>
     </div>
 
-    <nav class="bnav" aria-label="Abas"><button type="button" data-tab="minuta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg><span>Minuta</span></button><button type="button" data-tab="resumo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Resumo</span></button><button type="button" data-tab="itens"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Itens</span></button><button type="button" data-tab="autoria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg><span>Autoria IA</span></button><button type="button" data-tab="gram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>Gramática</span></button><button type="button" data-tab="seg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Segurança</span></button><button type="button" data-tab="saidas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg><span>Saídas</span></button><button type="button" data-tab="ajuda"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 .5c0 1.7-2.5 2-2.5 3.5M12 17h.01"/></svg><span>Ajuda</span></button></nav>
+    <nav class="bnav" aria-label="Abas"><button type="button" data-tab="minuta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg><span>Minuta</span></button><button type="button" data-tab="resumo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Resumo</span></button><button type="button" data-tab="itens"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Itens</span></button><button type="button" data-tab="autoria"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg><span>Autoria IA</span></button><button type="button" data-tab="gram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><span>Gramática</span></button><button type="button" data-tab="seg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Segurança</span></button><button type="button" data-tab="lab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 15h8"/></svg><span>Laboratório</span></button><button type="button" data-tab="saidas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg><span>Saídas</span></button><button type="button" data-tab="ajuda"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 .5c0 1.7-2.5 2-2.5 3.5M12 17h.01"/></svg><span>Ajuda</span></button></nav>
   </div>
 </div>
 
@@ -1687,6 +1716,8 @@ var Core=(function(){
       var reg=parSent.filter(function(n){return n>=3&&n<=5;}).length/parSent.length; medidas.paragrafos=Math.round(reg*100);
       if(reg>=0.8) add('Geometria regular dos parágrafos',Math.round(reg*100)+'% dos parágrafos têm de 3 a 5 frases',0.6,'Parágrafos com forma quase idêntica (tese, desenvolvimento, fecho) são traço de texto gerado.',false);
     }
+    var ENUM=(B.match(/(?:^|[.!?]\s+|\n)\s*(?:Em primeiro lugar|Em segundo lugar|Em terceiro lugar|Primeiramente|Em seguida|Por fim|Primeiro|Segundo|Terceiro|Quarto)\s*[,:]/g)||[]).length;
+    if(N>=250&&ENUM>=4) add('Cadência de raciocínio passo a passo',ENUM+' marcadores de ordem no início de frases',0.5,'Enumeração em etapas («primeiro», «em seguida», «por fim») é típica de modelos de raciocínio, que explicitam a cadeia de argumentos. Peso baixo: advogados e magistrados também usam.',false);
     var invis=(text.match(/[​-‏⁠﻿‪-‮­]/g)||[]).length, homo=(text.match(/[A-Za-z][Ѐ-ӿͰ-Ͽ]|[Ѐ-ӿͰ-Ͽ][A-Za-z]/g)||[]).length;
     if(invis+homo) add('Sinais de ofuscação contra detectores',invis+' caractere(s) invisível(is); '+homo+' mistura(s) de alfabetos',0.8,'Caracteres de largura zero e letras de outro alfabeto são técnicas de evasão de detectores. A prática é indício em si e reduz a confiabilidade da análise estatística.',false);
     // ---- ajuste de domínio (registro jurídico formular)
@@ -1713,7 +1744,7 @@ var Core=(function(){
     });
     x=-1.2+soma;
     var conv=Object.keys(fam).filter(function(k){return k!=='dominio'&&fam[k]>=0.3;});
-    var p=100/(1+Math.exp(-x)), pct=Math.round(p), p0=23;
+    var p=100/(1+Math.exp(-x)), pct=Math.round(p), p0=23, bruto=pct;
     if(!direto){
       var wN=Math.min(1,N/600); if(pct>p0) pct=Math.round(p0+(pct-p0)*wN);
       pct=Math.min(pct,conv.length>=3?78:59);
@@ -1763,7 +1794,7 @@ var Core=(function(){
     else if(pct<40) concl+='Os padrões encontrados são compatíveis com redação humana habitual e não permitem concluir pelo uso de IA.';
     else if(pct<60) concl+='Os padrões são compatíveis tanto com redação humana quanto com texto gerado ou revisado por IA. Não é possível concluir em um sentido.';
     else concl+='Os padrões são mais compatíveis com texto gerado ou reescrito por IA do que com redação humana espontânea. Recomenda-se conferir a origem e revisar integralmente o conteúdo.';
-    return {pct:pct,lo:lo,hi:hi,nivel:nivel,titulo:titulo,conf:conf,ind:ind,pro:pro,con:con,N:N,direto:direto,conclusao:concl,cenario:cenario,conv:conv,dom:dom,medidas:medidas,mapa:mapa};
+    return {pct:pct,bruto:bruto,lo:lo,hi:hi,nivel:nivel,titulo:titulo,conf:conf,ind:ind,pro:pro,con:con,N:N,direto:direto,conclusao:concl,cenario:cenario,conv:conv,dom:dom,medidas:medidas,mapa:mapa};
   }
   /* ---------- evidências locais dos indícios de autoria (trechos para «ver no texto») ---------- */
   function evidencias(text,a,items){
@@ -1825,6 +1856,7 @@ var Core=(function(){
       }
       else if(/^Sinais de alucinação/.test(n)) sps=items.filter(function(x){return x.start>=0&&((x.kind==='achado'&&x.type==='suspeita'&&x.alerts.some(function(al){return al.g!=='formal';}))||(x.kind==='cit'&&x.audit&&x.audit.res==='sem'));}).map(function(x){return {s:x.start,e:x.end};});
       else if(/^Uso de travessão/.test(n)) sps=sp(/ — /);
+      else if(/^Cadência de raciocínio/.test(n)) sps=sp(/(?:^|[.!?]\s+|\n)\s*(?:Em primeiro lugar|Em segundo lugar|Em terceiro lugar|Primeiramente|Em seguida|Por fim|Primeiro|Segundo|Terceiro|Quarto)\s*[,:]/);
       else if(/^Tópicos com rótulo/.test(n)) sps=corpo.filter(function(c){return /^\s*(?:[-•*]\s*)?[A-ZÁÉÍÓÚÂÊÔÃÕÇ][^:\n]{2,40}:\s+\S/.test(c.l);}).map(function(c){return {s:c.s,e:c.e};}).slice(0,CAP);
       else if(/^Trechos em inglês/.test(n)) sps=sp(/\b(?:the|and|with|that|this|which|should|would)\b/i);
       else if(/^Posicionamento pessoal/.test(n)) sps=sp(/\b(?:entendo|a meu ver|em meu sentir|com a devida vênia|data venia|filio-me|perfilho|divirjo|ressalvo)\b/i);
@@ -2005,7 +2037,143 @@ var Core=(function(){
     log.reverse();
     return {text:t,log:log};
   }
-  return {evidencias:evidencias,NORMAS:NORMAS,baseAudit:baseAudit,resolveDip:resolveDip,gramatica:gramatica,gramCorrigir:gramCorrigir,autoria:autoria,TYPE_LABEL:TYPE_LABEL,AUD:AUD,GRAV_LABEL:GRAV_LABEL,ORD:ORD,extract:extract,scan:scan,compare:compare,cnjDV:cnjDV,sample:sample,sevOf:sevOf,gravOf:gravOf,alertGrav:alertGrav,
+  /* ---------- governança de falsos positivos, deriva estilística, ataques simulados e calibração ---------- */
+  var USO={desconhecido:'Uso de IA desconhecido',proprio:'Texto próprio, sem IA admitida',edicao:'Edição ou revisão linguística por IA admitida',geracao:'Geração por IA admitida (rascunho)'};
+  var POLIT={padrao:{nome:'Padrão',lim:60,fam:2,fpr:'5%'},conservador:{nome:'Conservador',lim:70,fam:3,fpr:'1%'},ultra:{nome:'Ultraconservador',lim:85,fam:4,fpr:'0,05%'}};
+  function governanca(a,ctx){
+    ctx=ctx||{}; var uso=USO[ctx.uso]?ctx.uso:'desconhecido', pol=POLIT[ctx.politica]?ctx.politica:'conservador', P=POLIT[pol], l2=!!ctx.l2;
+    var R={uso:uso,usoNome:USO[uso],pol:pol,polNome:P.nome,l2:l2,avisos:[],classe:'insuf',titulo:'Sem estimativa',texto:'O texto é curto demais para estimativa.',lim:P.lim+(l2?10:0),famReq:P.fam};
+    if(!a||a.pct===null) return R;
+    var conv=(a.conv||[]).length, atinge=a.direto||(a.pct>=R.lim&&conv>=P.fam);
+    if(uso==='edicao'&&!a.direto&&a.pct>=40){
+      R.classe='edicao'; R.titulo='Compatível com a edição por IA admitida';
+      R.texto='A revisão por IA padroniza o estilo e eleva o escore sem indicar geração integral. O percentual não é indício de infração.';
+    }else if(uso==='geracao'){
+      R.classe='declarado'; R.titulo='Uso de IA declarado';
+      R.texto='O percentual mede o grau de padronização do texto, não infração. Cabe revisar integralmente o conteúdo e conferir as citações.';
+    }else if(atinge){
+      R.classe='conferir'; R.titulo='Atinge o limiar da política '+P.nome.toLowerCase();
+      R.texto=(a.direto?'Há marca direta de ferramenta de IA. ':'O escore ('+a.pct+'%) e a convergência de '+conv+' família(s) de indícios atingem o limiar ('+R.lim+'% e '+P.fam+' famílias). ')+'Justifica conferir a origem com a pessoa responsável. Não é prova de autoria.';
+    }else if(a.pct>=40){
+      R.classe='incon'; R.titulo='Inconclusivo para a política '+P.nome.toLowerCase();
+      R.texto='O escore ('+a.pct+'%) e a convergência ('+conv+' família(s)) não atingem o limiar de '+R.lim+'% com '+P.fam+' famílias. Não há base para concluir em nenhum sentido.';
+    }else{
+      R.classe='sem'; R.titulo='Sem indício relevante'; R.texto='O escore ('+a.pct+'%) não indica redação por IA.';
+    }
+    R.avisos.push('A pontuação não é prova autônoma de autoria nem de má-fé. Exige cruzamento com fluxo de trabalho, versões do arquivo e depoimento.');
+    R.avisos.push('A política "'+P.nome+'" mira taxa de falsos positivos de cerca de '+P.fpr+'. Esse alvo só se confirma com calibração em corpus próprio (aba Laboratório); sem ela, é apenas um critério de cautela.');
+    if(l2) R.avisos.push('Autor que escreve em segunda língua: detectores erram mais contra esses autores (a literatura registra taxas altas de falso positivo). O limiar foi elevado em 10 pontos.');
+    if(a.dom<1) R.avisos.push('Registro forense formular: o texto jurídico é naturalmente padronizado. O peso dos indícios de estilo já foi reduzido.');
+    if(a.N<400) R.avisos.push('Texto curto ('+a.N+' palavras): a estimativa é instável.');
+    if(a.direto) R.avisos.push('A marca direta (resíduo, fórmula de assistente, formatação de chat ou metadado) indica cópia de resposta de IA, mas não diz quem copiou nem com que finalidade.');
+    return R;
+  }
+  function deriva(a){
+    var m=(a&&a.mapa)||[], R={ok:false,sd:0,salto:0,mista:false,texto:'Menos de seis parágrafos analisáveis: deriva não avaliada.',par:[]};
+    if(m.length<6) return R;
+    var sc=m.map(function(x){return x.score;}), mu=sc.reduce(function(x,y){return x+y;},0)/sc.length;
+    R.sd=Math.round(Math.sqrt(sc.reduce(function(x,y){return x+(y-mu)*(y-mu);},0)/sc.length));
+    var blocos=[]; for(var i=0;i<sc.length;i+=3){var seg=sc.slice(i,i+3); blocos.push({i:i,m:seg.reduce(function(x,y){return x+y;},0)/seg.length,n:seg.length});}
+    var best=0,bi=0; for(var k=1;k<blocos.length;k++){var d=Math.abs(blocos[k].m-blocos[k-1].m); if(d>best){best=d;bi=k;}}
+    R.ok=true; R.salto=Math.round(best); R.mista=best>=35;
+    if(R.mista){
+      var a0=blocos[bi-1], b0=blocos[bi];
+      R.par=[]; for(var p=a0.i;p<b0.i+b0.n;p++) R.par.push(m[p].n);
+      R.texto='Mudança brusca de estilo: a média local passa de '+Math.round(a0.m)+' para '+Math.round(b0.m)+' entre os parágrafos '+m[a0.i].n+'–'+m[a0.i+a0.n-1].n+' e '+m[b0.i].n+'–'+m[b0.i+b0.n-1].n+'. Pode indicar trecho inserido, colado ou reescrito por outra fonte (autoria mista). Não prova uso de IA.';
+    }else R.texto='Estilo relativamente homogêneo ao longo do texto (desvio-padrão do índice local: '+R.sd+'; maior salto entre blocos: '+R.salto+').';
+    return R;
+  }
+  var CIR={'а':'a','е':'e','о':'o','р':'p','с':'c','х':'x','у':'y','і':'i','А':'A','Е':'E','О':'O','Р':'P','С':'C','Х':'X','Т':'T','Н':'H','К':'K','М':'M','В':'B','α':'a','ο':'o','ε':'e'};
+  function normalizar(t){
+    t=String(t||'').replace(/[\u200B-\u200F\u2060\uFEFF\u202A-\u202E\u00AD]/g,'');
+    return t.replace(/[\p{L}]+/gu,function(w){
+      if(/[A-Za-z]/.test(w)&&/[\u0370-\u03FF\u0400-\u04FF]/.test(w)) return w.replace(/[\u0370-\u03FF\u0400-\u04FF]/g,function(c){return CIR[c]||c;});
+      return w;
+    });
+  }
+  function rng(seed){var s=seed>>>0; return function(){s=(s+0x6D2B79F5)>>>0; var t=s; t=Math.imul(t^(t>>>15),t|1); t^=t+Math.imul(t^(t>>>7),t|61); return((t^(t>>>14))>>>0)/4294967296;};}
+  var SINON={'Portanto':'Logo','Ademais':'Além disso','Contudo':'Porém','Todavia':'Mas','Nesse sentido':'Nessa linha','Dessa forma':'Assim','Além disso':'Também','Em suma':'Resumindo','Outrossim':'Também','Entretanto':'Porém','Por conseguinte':'Logo'};
+  var CONEC_RX=/(^|[.!?]\s+|\n)(Ademais|Outrossim|Portanto|Assim|Dessa forma|Desse modo|Nesse sentido|Além disso|Contudo|Todavia|Entretanto|No entanto|Por conseguinte|Por fim|Em suma|Em síntese|Logo|Dessarte|Destarte|Diante disso|Dito isso|Por outro lado|Com efeito),\s+(\S)/g;
+  function atqZW(t,r){return t.replace(/\p{L}{6,}/gu,function(w){return r()<0.18?w.slice(0,3)+'\u200B'+w.slice(3):w;});}
+  function atqHomo(t,r){var M={a:'а',e:'е',o:'о',p:'р',c:'с'}; return t.replace(/\p{L}{3,}/gu,function(w){if(r()>=0.06) return w; return w.replace(/[aeopc]/,function(c){return M[c];});});}
+  function atqFrag(t,r){return t.replace(/([^.!?\n]{140,}?[a-zà-ú]{3,}), (?=[a-zà-ú])([^.!?\n]{40,}[.!?])/g,function(m,a,b){return a+'. '+b.charAt(0).toUpperCase()+b.slice(1);});}
+  function atqSemCon(t){return t.replace(CONEC_RX,function(m,pre,c,ch){return pre+ch.toUpperCase();});}
+  function atqSinon(t){return t.replace(CONEC_RX,function(m,pre,c,ch){var n=SINON[c]; return n?pre+n+', '+ch:m;});}
+  function atqPont(t,r){return t.replace(/,/g,function(){return r()<0.15?'':',';});}
+  function ataques(text){
+    var T=String(text||''), r1=rng(11), r2=rng(23), r3=rng(37), r4=rng(41);
+    var combo=atqPont(atqFrag(atqSemCon(atqSinon(T)),r4),r4);
+    return [
+      {id:'zw',nome:'Caracteres invisíveis dentro das palavras',desc:'Insere espaço de largura zero em cerca de 18% das palavras longas.',texto:atqZW(T,r1),norm:true},
+      {id:'homo',nome:'Troca por letras de outro alfabeto (homóglifos)',desc:'Troca uma letra latina por cirílica parecida em cerca de 6% das palavras.',texto:atqHomo(T,r2),norm:true},
+      {id:'semcon',nome:'Remoção de conectivos de abertura',desc:'Apaga «Ademais,», «Portanto,», «Nesse sentido,» e similares no início das frases.',texto:atqSemCon(T)},
+      {id:'sinon',nome:'Troca de conectivos por sinônimos',desc:'Substitui conectivos típicos por equivalentes (Portanto→Logo, Ademais→Além disso etc.).',texto:atqSinon(T)},
+      {id:'frag',nome:'Fragmentação de frases longas',desc:'Divide frases longas na primeira vírgula favorável, para variar o ritmo.',texto:atqFrag(T,r3)},
+      {id:'pont',nome:'Supressão de vírgulas',desc:'Remove cerca de 15% das vírgulas.',texto:atqPont(T,r3)},
+      {id:'combo',nome:'Combinação (sinônimos, sem conectivos, fragmentação e vírgulas)',desc:'Aplica quatro ataques em sequência. Aproxima uma "humanização" simples. Paráfrase por outro modelo de IA não é simulada.',texto:combo}
+    ];
+  }
+  function robustez(text){
+    var base=autoria(text,[],[]); if(!base||base.pct===null) return {erro:'Texto insuficiente (mínimo de 30 palavras).'};
+    var rows=ataques(text).map(function(a){
+      var r=autoria(a.texto,[],[]), pn=null;
+      if(a.norm){var rn=autoria(normalizar(a.texto),[],[]); pn=rn&&rn.pct!==null?rn.bruto:null;}
+      var d=r&&r.pct!==null?r.bruto-base.bruto:null, obf=(r&&r.ind||[]).some(function(i){return /ofuscação/.test(i.nome);});
+      var leit;
+      if(r===null||r.pct===null) leit='Texto resultante insuficiente.';
+      else if(a.norm) leit=(obf?'O programa detecta a ofuscação (peso próprio). ':'A ofuscação não foi detectada. ')+(pn!==null?'Após a normalização, o escore bruto volta a '+pn+'%.':'');
+      else if(d<=-15) leit='Queda relevante: o escore é sensível a este ataque. Não confie só no percentual quando houver reescrita.';
+      else if(d>=15) leit='Aumento relevante: o ataque criou padrões artificiais.';
+      else leit='Variação pequena: o escore resistiu a este ataque.';
+      return {id:a.id,nome:a.nome,desc:a.desc,pct:r&&r.pct,bruto:r&&r.bruto,lo:r&&r.lo,hi:r&&r.hi,delta:d,obf:obf,pctNorm:pn,leitura:leit};
+    });
+    return {base:base.pct,baseBruto:base.bruto,lo:base.lo,hi:base.hi,N:base.N,rows:rows};
+  }
+  function parseCorpus(txt){
+    var out=[], cur=null;
+    String(txt||'').split('\n').forEach(function(l){
+      var m=l.match(/^\s*#{3}\s*(HUMANO|IA)\b/i);
+      if(m){ if(cur&&cur.t.trim()) out.push(cur); cur={y:/^IA$/i.test(m[1])?1:0,t:''}; }
+      else if(cur) cur.t+=l+'\n';
+    });
+    if(cur&&cur.t.trim()) out.push(cur);
+    return out;
+  }
+  function plattP(pl,score){return 1/(1+Math.exp(-(pl.a*((score-50)/25)+pl.b)));}
+  function calibrar(rows){
+    var pos=rows.filter(function(r){return r.y===1;}), neg=rows.filter(function(r){return r.y===0;}), n=rows.length;
+    if(pos.length<3||neg.length<3) return {erro:'São necessários ao menos 3 textos de IA e 3 humanos com escore válido.'};
+    var auc=0; pos.forEach(function(p){neg.forEach(function(q){auc+=p.s>q.s?1:p.s===q.s?0.5:0;});}); auc/=pos.length*neg.length;
+    var a=0,b=0;
+    for(var it=0;it<100;it++){
+      var g0=0,g1=0,h00=1e-6,h01=0,h11=1e-6;
+      rows.forEach(function(r){var z=(r.s-50)/25, p=1/(1+Math.exp(-(a*z+b))), w=p*(1-p), e=p-r.y; g0+=e*z; g1+=e; h00+=w*z*z; h01+=w*z; h11+=w;});
+      var det=h00*h11-h01*h01; if(Math.abs(det)<1e-12) break;
+      var da=(h11*g0-h01*g1)/det, db=(-h01*g0+h00*g1)/det; a-=da; b-=db;
+      if(Math.abs(da)+Math.abs(db)<1e-8) break;
+    }
+    var pl={a:a,b:b};
+    function bins(pf){
+      var B=[]; for(var k=0;k<10;k++) B.push({lo:k/10,hi:(k+1)/10,n:0,conf:0,acc:0});
+      rows.forEach(function(r){var p=pf(r.s), k=Math.min(9,Math.floor(p*10)); B[k].n++; B[k].conf+=p; B[k].acc+=r.y;});
+      var ece=0; B.forEach(function(x){if(x.n){x.conf/=x.n; x.acc/=x.n; ece+=x.n/n*Math.abs(x.acc-x.conf);}});
+      return {B:B,ece:ece};
+    }
+    var raw=bins(function(s){return s/100;}), cal=bins(function(s){return plattP(pl,s);});
+    var br=0,bp=0; rows.forEach(function(r){br+=Math.pow(r.s/100-r.y,2); bp+=Math.pow(plattP(pl,r.s)-r.y,2);}); br/=n; bp/=n;
+    var nd=neg.map(function(r){return r.s;}).sort(function(x,y){return y-x;});
+    var lim=[0.0001,0.0005,0.01,0.05].map(function(al){
+      var perm=Math.floor(al*neg.length), t=perm>=nd.length?-1:nd[perm];
+      var tp=pos.filter(function(r){return r.s>t;}).length, fp=neg.filter(function(r){return r.s>t;}).length;
+      return {alpha:al,t:t,tpr:tp/pos.length,fpr:fp/neg.length,ub:Math.min(1,3/neg.length),medivel:al>=1/neg.length};
+    });
+    return {n:n,nPos:pos.length,nNeg:neg.length,auc:auc,platt:pl,ece:raw.ece,eceP:cal.ece,brier:br,brierP:bp,bins:raw.B,binsP:cal.B,lim:lim,mediaIA:pos.reduce(function(x,r){return x+r.s;},0)/pos.length,mediaH:neg.reduce(function(x,r){return x+r.s;},0)/neg.length};
+  }
+  function vpp(prev,fpr,tpr,N){
+    N=N||1000; var inf=prev*N, vp=tpr*inf, fp=fpr*(N-inf), ppv=(vp+fp)?vp/(vp+fp):0;
+    return {N:N,infratores:inf,verdadeiros:vp,falsos:fp,ppv:ppv,razao:vp?fp/vp:null,limpos:N-inf};
+  }
+  return {governanca:governanca,deriva:deriva,ataques:ataques,normalizar:normalizar,robustez:robustez,calibrar:calibrar,plattP:plattP,vpp:vpp,parseCorpus:parseCorpus,USO:USO,POLIT:POLIT,evidencias:evidencias,NORMAS:NORMAS,baseAudit:baseAudit,resolveDip:resolveDip,gramatica:gramatica,gramCorrigir:gramCorrigir,autoria:autoria,TYPE_LABEL:TYPE_LABEL,AUD:AUD,GRAV_LABEL:GRAV_LABEL,ORD:ORD,extract:extract,scan:scan,compare:compare,cnjDV:cnjDV,sample:sample,sevOf:sevOf,gravOf:gravOf,alertGrav:alertGrav,
     audit:audit,auditItem:auditItem,sanitize:sanitize,tagEnc:tagEnc,instrucoes:instrucoes,comandos:comandos,lacunas:lacunas,CLS:CLS,LAC_TIPO:LAC_TIPO,localOf:localOf,deob:deob};
 })();
 </script>
@@ -2160,13 +2328,23 @@ var Core=(function(){
     if(!a||a.pct===null){ $('#n-aut').textContent='sem estimativa'; $('#c-aut').innerHTML='<p class="nota">'+esc(a?a.conclusao:'Sem texto.')+'</p>'; return; }
     $('#n-aut').textContent=a.pct+'% (faixa '+a.lo+'% a '+a.hi+'%)';
     var cor=a.pct>=60?'var(--bad)':a.pct>=40?'var(--warn)':'var(--ok)';
+    var G=Core.governanca(a,S.ctx), D=Core.deriva(a);
+    var h0='<div class="gov-box '+G.classe+'"><b>'+esc(G.titulo)+'</b>'+esc(G.texto)+'<ul>'+G.avisos.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></div>';
+    h0+='<div class="gov-box '+(D.mista?'incon':'sem')+'"><b>Deriva estilística entre blocos de parágrafos</b>'+esc(D.texto)+(D.mista&&S.evid?' '+ref('Deriva estilística',D.par.map(function(n){return S.evid.mapa[n-1];}).filter(Boolean),'Ver no texto'):'')+'</div>';
+    $('#c-gov').innerHTML=h0;
     var h='<div class="aut-topo"><div class="aut-pct" style="color:'+cor+'">'+a.pct+'%</div><div><strong>'+esc(a.titulo)+'</strong><br><span class="dica">Faixa provável: '+a.lo+'% a '+a.hi+'%. Confiança: '+esc(a.conf)+'. Corpo analisado: '+a.N.toLocaleString('pt-BR')+' palavras.</span></div></div>';
     h+='<div class="aut-barra" role="img" aria-label="Probabilidade estimada de redação por IA: '+a.pct+'%"><i style="left:'+a.lo+'%;width:'+(a.hi-a.lo)+'%"></i><b style="left:'+a.pct+'%"></b></div>';
     h+='<p><strong>Cenário mais compatível:</strong> '+esc(a.cenario)+'</p><p>'+esc(a.conclusao)+'</p>';
+    var cs=a.ind.filter(function(i){return (i.efAj!==undefined?i.efAj:i.ef)!==0;}).sort(function(x,y){return Math.abs(y.efAj!==undefined?y.efAj:y.ef)-Math.abs(x.efAj!==undefined?x.efAj:x.ef);});
+    if(cs.length){
+      var mx=Math.max.apply(null,cs.map(function(i){return Math.abs(i.efAj!==undefined?i.efAj:i.ef);}));
+      h+='<h3>Contribuição de cada indício</h3><p class="dica">Barras à direita puxam o escore para IA. Barras à esquerda puxam para autoria humana. O tamanho é o peso do indício.</p><div class="contrib" role="list">'+cs.map(function(i){var e=i.efAj!==undefined?i.efAj:i.ef, w=Math.round(Math.abs(e)/mx*50); return '<div class="cr" role="listitem"><span>'+esc(i.nome)+'</span><div class="cb"><i class="'+(e>0?'p':'n')+'" style="width:'+w+'%"></i></div><span class="cv">'+(e>0?'+':'')+e.toFixed(2)+'</span></div>';}).join('')+'</div>';
+    }
     h+='<div class="tbl-w"><table class="tbl"><thead><tr><th>Indício</th><th>Medição</th><th>Efeito (peso)</th><th>Leitura</th><th>Onde</th></tr></thead><tbody>';
     a.ind.forEach(function(i){var ef=i.efAj!==undefined?i.efAj:i.ef; h+='<tr><td>'+esc(i.nome)+'</td><td>'+esc(i.medido)+'</td><td><span class="tag '+(ef>0?'na':ef<0?'ex':'nap')+'">'+(ef>0?'Indica IA':ef<0?'Indica autoria humana':'Neutro')+'</span> <span class="dica">'+(ef>0?'+':'')+ef.toFixed(2)+(i.efAj!==undefined&&i.efAj!==i.ef?' (ajustado de '+i.ef.toFixed(2)+')':'')+'</span></td><td>'+esc(i.leitura)+'</td><td>'+ondeInd(i)+'</td></tr>';});
     h+='</tbody></table></div>';
     if(a.mapa&&a.mapa.length){
+      h+='<h3>Mapa de calor do texto</h3><p class="dica">Cada quadro é um parágrafo, na ordem do texto. Clique para ver o parágrafo na minuta.</p><div class="heat">'+a.mapa.map(function(m){var sp=S.evid&&S.evid.mapa[m.n-1]; if(!sp) return ''; REFS.push({label:'Parágrafo '+m.n+' (índice '+m.score+')',spans:[sp]}); return '<button type="button" data-ver="'+(REFS.length-1)+'" style="background:hsl('+Math.round(135-1.35*m.score)+',60%,62%)" title="Parágrafo '+m.n+': índice '+m.score+'">'+m.n+'</button>';}).join('')+'</div><div class="heat-leg"><span><i style="background:hsl(135,60%,62%)"></i>índice baixo</span><span><i style="background:hsl(68,60%,62%)"></i>médio</span><span><i style="background:hsl(0,60%,62%)"></i>alto (≥ 60: exame humano)</span></div>';
       h+='<h3>Mapa de parágrafos (explicação local)</h3><p class="dica">Pontuação local de cada parágrafo e os fatores que a produziram. Parágrafos acima de 60 merecem exame humano.</p><div class="tbl-w"><table class="tbl"><thead><tr><th>#</th><th>Início do parágrafo</th><th>Palavras</th><th>Índice local</th><th>Fatores</th><th>Onde</th></tr></thead><tbody>';
       a.mapa.slice(0,60).forEach(function(m){var c=m.score>=60?'var(--bad)':m.score>=40?'var(--warn)':'var(--ok)'; h+='<tr><td>'+m.n+'</td><td>'+esc(m.ini)+'…</td><td>'+m.pal+'</td><td><strong style="color:'+c+'">'+m.score+'</strong></td><td>'+esc(m.drivers.join('; ')||'nenhum')+'</td><td>'+(S.evid&&S.evid.mapa[m.n-1]?ref('Parágrafo '+m.n+' (índice '+m.score+')',[S.evid.mapa[m.n-1]],'Ver'):'')+'</td></tr>';});
       h+='</tbody></table></div>';
@@ -2255,7 +2433,7 @@ var Core=(function(){
     Core.audit(S.items,S.fontes);
     S.prompt=$('#prompt-orig').value; S.fin=$('#finalidade').value.trim();
     S.instr=Core.instrucoes(S.items,S.text,S.prompt); S.cmds=Core.comandos(S.text,S.fontes,S.prompt); S.lac=Core.lacunas(S.text,S.fontes,S.items); S.cmdOk={}; S.lacOk={};
-    S.cob=cobertura(); S.aut=Core.autoria(S.text,S.items,S.instr); S.gram=Core.gramatica(S.text); S.evid=Core.evidencias(S.text,S.aut,S.items); S.foco=null;
+    S.cob=cobertura(); S.aut=Core.autoria(S.text,S.items,S.instr); S.gram=Core.gramatica(S.text); S.evid=Core.evidencias(S.text,S.aut,S.items); S.foco=null; S.rob=null; try{$('#c-rob').innerHTML=''; $('#n-rob').textContent='';}catch(e){}
     $('#resultado').hidden=false; $('#box-saida').hidden=true;
     buildTipo(); renderTexto(); renderLista(); renderPaineis(); syncFilterUI(); updateSummary(); applyFilter();
     navBadges(); irAba('resumo');
@@ -2932,6 +3110,12 @@ var Core=(function(){
         H(2,'Parágrafos de maior índice local (0 a 100)');
         T(['Parágrafo','Início','Índice'],a.mapa.slice().sort(function(x,y){return y.score-x.score;}).slice(0,8).map(function(m){return [m.n,'«'+oneLine(m.ini,70)+'…»',m.score];}),[12,70,18]);
       }
+      var gv=Core.governanca(a,S.ctx), dv=Core.deriva(a);
+      H(2,'Governança dos falsos positivos');
+      T(['Item','Resultado'],[['Contexto de uso de IA',gv.usoNome],['Política de limiar',gv.polNome+' (limiar efetivo: escore de '+gv.lim+'% e '+gv.famReq+' famílias de indícios'+(gv.l2?'; autor em segunda língua: +10 pontos':'')+')'],['Classificação',gv.titulo],['Leitura',gv.texto]],[28,72]);
+      U(gv.avisos);
+      H(2,'Deriva estilística');
+      P(dv.texto);
       P('A estimativa é probabilística, não prova autoria e não pode fundamentar, por si só, qualquer consequência. Textos jurídicos formais podem pontuar alto por seu estilo próprio.');
     }
 
@@ -2946,7 +3130,24 @@ var Core=(function(){
       if(G.length>150) P('… e mais '+(G.length-150)+' ocorrência(s). Use o botão "Texto corrigido" ou a aba Gramática.');
     }
 
-    H(1,'11. Providências, por prioridade');
+    H(1,'11. Laboratório: robustez e calibração');
+    if(!S.rob) P('Teste de robustez não executado nesta sessão (aba Laboratório).');
+    else if(S.rob.erro) P(S.rob.erro);
+    else{
+      P('Escore bruto de referência: '+S.rob.baseBruto+'%. Cada linha aplica um ataque simulado à minuta e mede a variação.');
+      T(['Ataque','Escore final','Escore bruto','Variação','Leitura'],S.rob.rows.map(function(x){return [x.nome,x.pct===null?'—':x.pct+'% ('+x.lo+'% a '+x.hi+'%)',x.bruto===null?'—':x.bruto+'%',x.delta===null?'—':(x.delta>0?'+':'')+x.delta,x.leitura];}),[26,16,10,9,39]);
+      P('Paráfrase por outro modelo de IA não foi simulada.');
+    }
+    if(!S.cal) P('Calibração não executada nesta sessão. Sem calibração, o percentual é um índice, não uma probabilidade.');
+    else if(S.cal.erro) P(S.cal.erro);
+    else{
+      var cl=S.cal, pf=function(v,d){return (v*100).toFixed(d==null?1:d).replace('.',',')+'%';}, nn=function(v,d){return Number(v).toFixed(d).replace('.',',');};
+      T(['Medida','Resultado'],[['Textos',cl.n+' ('+cl.nPos+' de IA e '+cl.nNeg+' humanos)'],['AUC',nn(cl.auc,3)],['ECE do escore bruto',nn(cl.ece,3)],['ECE após escala de Platt',nn(cl.eceP,3)],['Brier (bruto / Platt)',nn(cl.brier,3)+' / '+nn(cl.brierP,3)]],[40,60]);
+      T(['Alvo de falsos positivos','Sinalizar se o escore for maior que','Falsos positivos no corpus','Acerto'],cl.lim.map(function(l){return [pf(l.alpha,2),nn(l.t,1),pf(l.fpr,1),pf(l.tpr,1)+(l.medivel?'':' (alvo abaixo da resolução do corpus)')];}),[25,30,25,20]);
+      if(S.aut&&S.aut.pct!==null) P('Probabilidade calibrada para esta minuta: '+pf(Core.plattP(cl.platt,S.aut.pct),0)+' (escore '+S.aut.pct+'%). Vale só para textos parecidos com o corpus usado.');
+    }
+
+    H(1,'12. Providências, por prioridade');
     var f=[];
     if(S.instr.length) f.push(['1','Alta','Remover do arquivo original os '+S.instr.length+' comando(s) suspeito(s) ou resíduo(s) de IA e revisar o resultado.']);
     if(c.crit) f.push(['2','Alta','Resolver '+c.crit+' item(ns) crítico(s) em aberto.']);
@@ -2965,11 +3166,12 @@ var Core=(function(){
     f.forEach(function(r,i){r[0]=i+1;});
     T(['#','Prioridade','Providência'],f,[5,15,80]);
 
-    H(1,'12. Limites deste relatório');
+    H(1,'13. Limites deste relatório');
     U(['O programa aponta indícios e inconsistências. Não afirma que o texto esteja correto, limpo ou seguro.',
        'A conferência com a base de normas é de existência e limites do artigo. Não compara o conteúdo atribuído a ele.',
        'Nenhuma fonte externa foi consultada. Nenhum link foi aberto.',
-       'A estimativa de autoria por IA é probabilística e não constitui prova.']);
+       'A estimativa de autoria por IA é probabilística e não constitui prova.',
+       'Não rodam neste navegador: modelos de linguagem (Binoculars, Fast-DetectGPT), classificadores neurais (DeBERTa, Longformer) e detecção de marca d\'água. O escore é estilométrico.']);
     return B;
   }
   function diagTexto(B,md){
@@ -3797,6 +3999,86 @@ var Core=(function(){
   });
   $('#b-diag').addEventListener('click',abrirDiag);
   document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-diag]'); if(b) salvarDiag(b.dataset.diag);});
+
+  /* ---------- laboratório de detecção ---------- */
+  S.ctx={uso:'desconhecido',politica:'conservador',l2:false}; S.corpus={h:[],i:[]}; S.rob=null; S.cal=null;
+  function pc(v,d){return (v*100).toFixed(d==null?1:d).replace('.',',')+'%';}
+  function nf(v,d){return Number(v).toFixed(d==null?3:d).replace('.',',');}
+  function renderRob(){
+    var r=S.rob, el=$('#c-rob'); if(!r){el.innerHTML='';return;}
+    if(r.erro){el.innerHTML='<p class="nota nota-bad">'+esc(r.erro)+'</p>'; return;}
+    $('#n-rob').textContent='escore bruto de referência: '+r.baseBruto+'%';
+    var h='<div class="tbl-w"><table class="tbl"><thead><tr><th>Ataque</th><th>Escore final (faixa)</th><th>Escore bruto</th><th>Variação do bruto</th><th>Leitura</th></tr></thead><tbody>';
+    h+='<tr><td><b>Texto original</b></td><td>'+r.base+'% ('+r.lo+'% a '+r.hi+'%)</td><td>'+r.baseBruto+'%</td><td>—</td><td>Referência, sem os achados de itens e fontes.</td></tr>';
+    r.rows.forEach(function(x){h+='<tr><td>'+esc(x.nome)+'<br><span class="dica">'+esc(x.desc)+'</span></td><td>'+(x.pct===null?'—':x.pct+'% ('+x.lo+'% a '+x.hi+'%)')+'</td><td>'+(x.bruto===null?'—':x.bruto+'%')+'</td><td>'+(x.delta===null?'—':(x.delta>0?'+':'')+x.delta)+'</td><td>'+esc(x.leitura)+'</td></tr>';});
+    h+='</tbody></table></div><p class="nota">O escore bruto é o valor antes do teto de cautela, e por isso mostra melhor a sensibilidade. Se um ataque simples derruba o escore, o detector não deve embasar sanção sozinho. Os ataques de caracteres invisíveis e homóglifos são neutralizados pela normalização, que o programa aplica ao higienizar o texto.</p>';
+    el.innerHTML=h;
+  }
+  function svgCal(c){
+    var W=280,P=34,L=W-P-10;
+    function X(v){return P+v*L;} function Y(v){return W-P-v*L;}
+    var o='<svg viewBox="0 0 '+W+' '+W+'" width="'+W+'" height="'+W+'" role="img" aria-label="Diagrama de confiabilidade"><rect x="'+P+'" y="'+(W-P-L)+'" width="'+L+'" height="'+L+'" fill="none" style="stroke:var(--line)"/>';
+    for(var k=0;k<=10;k+=5){o+='<text x="'+(X(k/10)-8)+'" y="'+(W-P+14)+'">'+(k*10)+'%</text><text x="2" y="'+(Y(k/10)+3)+'">'+(k*10)+'%</text>';}
+    o+='<line x1="'+X(0)+'" y1="'+Y(0)+'" x2="'+X(1)+'" y2="'+Y(1)+'" stroke-dasharray="4 3" style="stroke:var(--muted)"/>';
+    function ln(B,cor){var pts=B.filter(function(b){return b.n;}).map(function(b){return [X(b.conf),Y(b.acc),b.n];}); if(pts.length>1) o+='<polyline fill="none" stroke-width="1.6" style="stroke:'+cor+'" points="'+pts.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ')+'"/>'; pts.forEach(function(p){o+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="'+Math.min(6,2+Math.sqrt(p[2])/2).toFixed(1)+'" style="fill:'+cor+'"/>';});}
+    ln(c.bins,'var(--bad)'); ln(c.binsP,'var(--ok)');
+    o+='<text x="'+P+'" y="12">Confiança declarada × frequência real</text></svg>';
+    return o;
+  }
+  function renderCal(){
+    var c=S.cal, el=$('#c-cal'); if(!c){el.innerHTML='';return;}
+    if(c.erro){el.innerHTML='<p class="nota nota-bad">'+esc(c.erro)+'</p>'; return;}
+    $('#n-cal').textContent=c.n+' textos; AUC '+nf(c.auc,2);
+    var h='<div class="tbl-w"><table class="tbl"><tbody>'+
+      '<tr><th>Textos usados</th><td>'+c.n+' ('+c.nPos+' de IA e '+c.nNeg+' humanos)</td></tr>'+
+      '<tr><th>Escore médio</th><td>IA: '+nf(c.mediaIA,1)+'. Humanos: '+nf(c.mediaH,1)+'.</td></tr>'+
+      '<tr><th>Área sob a curva ROC (AUC)</th><td>'+nf(c.auc,3)+' <span class="dica">(1 separa perfeitamente; 0,5 é acaso)</span></td></tr>'+
+      '<tr><th>Erro de calibração esperado (ECE)</th><td>escore bruto: '+nf(c.ece,3)+'. Após escala de Platt: '+nf(c.eceP,3)+'.</td></tr>'+
+      '<tr><th>Pontuação de Brier</th><td>bruto: '+nf(c.brier,3)+'. Após Platt: '+nf(c.brierP,3)+'. <span class="dica">(menor é melhor)</span></td></tr>'+
+      '<tr><th>Escala de Platt</th><td>probabilidade = 1 ÷ (1 + e^−(A·z + B)), com z = (escore − 50) ÷ 25; A = '+nf(c.platt.a,2)+'; B = '+nf(c.platt.b,2)+'.</td></tr></tbody></table></div>';
+    h+='<h3>Diagrama de confiabilidade</h3><div class="cal-fig">'+svgCal(c)+'<div class="dica" style="max-width:46ch"><p><span style="color:var(--bad)">●</span> Escore bruto tratado como probabilidade. <span style="color:var(--ok)">●</span> Após a escala de Platt. A linha tracejada é a calibração perfeita. Ponto abaixo da diagonal indica excesso de confiança. O tamanho do ponto indica a quantidade de textos.</p></div></div>';
+    h+='<h3>Limiar de escore por taxa de falsos positivos</h3><div class="tbl-w"><table class="tbl"><thead><tr><th>Alvo de falsos positivos</th><th>Sinalizar se o escore for maior que</th><th>Falsos positivos no corpus</th><th>Acerto (textos de IA)</th><th>Observação</th></tr></thead><tbody>'+
+      c.lim.map(function(l){return '<tr><td>'+pc(l.alpha,2)+'</td><td>'+nf(l.t,1)+'</td><td>'+pc(l.fpr,1)+'</td><td>'+pc(l.tpr,1)+'</td><td>'+(l.medivel?'Mensurável.':'Abaixo da resolução do corpus.')+'</td></tr>';}).join('')+'</tbody></table></div>';
+    h+='<p class="dica">Resolução do corpus: 1 falso positivo em '+c.nNeg+' textos humanos ('+pc(1/c.nNeg,1)+'). Para alvos menores, o resultado observado é zero, mas a taxa real pode chegar a '+pc(c.lim[0].ub,1)+' (limite superior de 95%). Amplie o corpus de textos humanos.</p>';
+    if(S.aut&&S.aut.pct!==null){var p=Core.plattP(c.platt,S.aut.pct); h+='<p><b>Minuta atual:</b> escore '+S.aut.pct+'%. Probabilidade calibrada de redação por IA: <b>'+pc(p,0)+'</b>, válida só para textos parecidos com o corpus usado.</p>';}
+    h+='<p class="nota">Leia com cautela: a calibração vale para o tipo de texto do corpus, e o corpus precisa ter autoria conhecida e confiável. Poucos textos geram estimativas instáveis. Nunca use o corpus de IA de um modelo para concluir sobre outro sem testar. A calibração não transforma o escore em prova.</p>';
+    el.innerHTML=h;
+  }
+  function renderVpp(){
+    var pr=parseFloat($('#v-prev').value)/100, fp=parseFloat($('#v-fpr').value)/100, tp=parseFloat($('#v-tpr').value)/100;
+    if(!(pr>0&&pr<=1&&fp>=0&&fp<=1&&tp>=0&&tp<=1)){$('#c-vpp').innerHTML='<p class="nota nota-bad">Informe valores válidos.</p>';return;}
+    var r=Core.vpp(pr,fp,tp,1000);
+    $('#c-vpp').innerHTML='<div class="tbl-w"><table class="tbl"><thead><tr><th>Em 1.000 textos</th><th>Quantidade</th></tr></thead><tbody><tr><td>Com IA indevida</td><td>'+nf(r.infratores,1)+'</td></tr><tr><td>Sinalizados corretamente</td><td>'+nf(r.verdadeiros,1)+'</td></tr><tr><td>Humanos sinalizados por engano</td><td>'+nf(r.falsos,1)+'</td></tr><tr><td><b>Chance de um sinalizado ter usado IA (valor preditivo positivo)</b></td><td><b>'+pc(r.ppv,1)+'</b></td></tr><tr><td>Humanos sinalizados para cada acerto</td><td>'+(r.razao===null?'—':nf(r.razao,1))+'</td></tr></tbody></table></div><p class="nota">Quanto mais rara a infração, mais a taxa de falsos positivos domina o resultado. Por isso a política padrão para sanções deve usar taxa de falsos positivos muito baixa e confirmação por outras provas.</p>';
+  }
+  ['#v-prev','#v-fpr','#v-tpr'].forEach(function(id){$(id).addEventListener('input',renderVpp);}); renderVpp();
+  $('#b-rob').addEventListener('click',function(){
+    if(!S.text.trim()){aviso('Verifique uma minuta antes de executar o teste.');return;}
+    S.rob=Core.robustez(S.text); renderRob();
+  });
+  function corpusInfo(){var t=$('#t-cal').value?Core.parseCorpus($('#t-cal').value):[]; $('#n-corpus').textContent=(S.corpus.h.length+S.corpus.i.length+t.length)?S.corpus.h.length+' humano(s) e '+S.corpus.i.length+' de IA por arquivo; '+t.length+' por colagem.':'Nenhum texto carregado.';}
+  function lerCorpus(inp,k){
+    var fs=Array.prototype.slice.call(inp.files||[]); inp.value='';
+    Promise.all(fs.map(function(f){return f.text().then(function(t){return {n:f.name,t:t};});})).then(function(a){
+      a.forEach(function(x){if(x.t.trim()) S.corpus[k].push(x.t);}); corpusInfo();
+    },function(){aviso('Não foi possível ler os arquivos.');});
+  }
+  $('#b-cal-h').addEventListener('click',function(){$('#f-cal-h').click();});
+  $('#b-cal-i').addEventListener('click',function(){$('#f-cal-i').click();});
+  $('#f-cal-h').addEventListener('change',function(){lerCorpus(this,'h');});
+  $('#f-cal-i').addEventListener('change',function(){lerCorpus(this,'i');});
+  $('#b-cal-l').addEventListener('click',function(){S.corpus={h:[],i:[]}; $('#t-cal').value=''; S.cal=null; corpusInfo(); renderCal(); $('#n-cal').textContent='';});
+  $('#t-cal').addEventListener('input',corpusInfo);
+  $('#b-cal').addEventListener('click',function(){
+    var docs=[]; S.corpus.h.forEach(function(t){docs.push({y:0,t:t});}); S.corpus.i.forEach(function(t){docs.push({y:1,t:t});});
+    Core.parseCorpus($('#t-cal').value).forEach(function(d){docs.push(d);});
+    var rows=[], curtos=0;
+    docs.forEach(function(d){var a=Core.autoria(d.t,[],[]); if(a&&a.pct!==null) rows.push({s:a.pct,y:d.y}); else curtos++;});
+    S.cal=Core.calibrar(rows); if(curtos&&!S.cal.erro) S.cal.curtos=curtos; renderCal();
+    if(curtos) aviso(curtos+' texto(s) com menos de 30 palavras foram ignorados.');
+  });
+  $('#s-uso').addEventListener('change',function(){S.ctx.uso=this.value; if(S.aut) renderPaineis();});
+  $('#s-pol').addEventListener('change',function(){S.ctx.politica=this.value; if(S.aut) renderPaineis();});
+  $('#c-l2').addEventListener('change',function(){S.ctx.l2=this.checked; if(S.aut) renderPaineis();});
   $('#b-sanit').addEventListener('click',function(){
     var r=Core.sanitize(S.text,S.items);
     var nv=novaVarredura(r.text);
@@ -3833,12 +4115,12 @@ var Core=(function(){
   });
 
   /* ---------- abas, tema e indicadores ---------- */
-  var ABAS={minuta:'Minuta e fontes',resumo:'Resumo',itens:'Itens e texto',autoria:'Autoria por IA',gram:'Gramática',seg:'Segurança e cobertura',saidas:'Saídas e relatórios',ajuda:'Ajuda e limites'};
+  var ABAS={minuta:'Minuta e fontes',resumo:'Resumo',itens:'Itens e texto',autoria:'Autoria por IA',gram:'Gramática',seg:'Segurança e cobertura',lab:'Laboratório de detecção',saidas:'Saídas e relatórios',ajuda:'Ajuda e limites'};
   var abaAtual='minuta';
   function irAba(id){
     if(!ABAS[id]) id='minuta';
     abaAtual=id;
-    var res=!/^(minuta|ajuda)$/.test(id), tem=!$('#resultado').hidden;
+    var res=!/^(minuta|ajuda|lab)$/.test(id), tem=!$('#resultado').hidden;
     Object.keys(ABAS).forEach(function(n){var t=$('#tab-'+n); if(t) t.hidden=(n!==id);});
     $('#vazio-res').hidden=!(res&&!tem);
     document.querySelectorAll('.nav button[data-tab],.bnav button[data-tab]').forEach(function(b){
@@ -3882,3 +4164,5 @@ var Core=(function(){
 
 })();
 </script>
+</body>
+</html>
